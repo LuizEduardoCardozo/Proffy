@@ -4,7 +4,11 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "start:dev": "tsnd src/ --transpile-only --ignore-watch node_modules --respawn"
+    "start:dev": "tsnd src/ --transpile-only --ignore-watch node_modules --respawn",
+
+    "knex:migrate": "knex --knexfile knexfile.ts migrate:latest",
+    "knex:rollback": "knex --knexfile knexfile.ts migrate:rollback"
+
   },
   "devDependencies": {
     "@types/express": "^4.17.8",
